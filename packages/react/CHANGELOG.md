@@ -1,5 +1,11 @@
 # @thesvg/react
 
+## 3.3.14
+
+### Patch Changes
+
+- feat: add earmark icon ([#1302](https://github.com/glincker/thesvg/issues/1302))
+
 ## 3.3.13
 
 ### Patch Changes
