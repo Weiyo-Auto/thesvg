@@ -60,12 +60,22 @@ export function QuickImport({ onImport, className }: QuickImportProps) {
 
   const starterIcons = useMemo(() => {
     if (!icons) return [];
-    const lookup = new Map<string, IconEntry>();
+
+    // ⚡ Bolt: Prevent full Map allocation of O(N) by using a Set for wanted keys
+    // and breaking early once all items are found.
+    const wanted = new Set(STARTER_SLUGS);
+    const result: IconEntry[] = [];
+
     for (let i = 0; i < icons.length; i++) {
-      lookup.set(icons[i].slug, icons[i]);
+      if (wanted.has(icons[i].slug)) {
+        result.push(icons[i]);
+        if (result.length === wanted.size) break;
+      }
     }
-    return STARTER_SLUGS.map((s) => lookup.get(s)).filter(
-      (x): x is IconEntry => Boolean(x),
+
+    // Restore the original intended ordering
+    return result.sort(
+      (a, b) => STARTER_SLUGS.indexOf(a.slug) - STARTER_SLUGS.indexOf(b.slug),
     );
   }, [icons]);
 
@@ -73,7 +83,9 @@ export function QuickImport({ onImport, className }: QuickImportProps) {
     if (!icons) return [];
     return icons.map((icon) => ({
       icon,
-      searchString: [icon.slug, icon.title, ...icon.aliases].join("\n").toLowerCase(),
+      searchString: [icon.slug, icon.title, ...icon.aliases]
+        .join("\n")
+        .toLowerCase(),
     }));
   }, [icons]);
 
