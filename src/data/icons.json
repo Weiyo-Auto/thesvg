@@ -54707,6 +54707,29 @@
     "collection": "brands"
   },
   {
+    "slug": "earmark",
+    "title": "Earmark",
+    "aliases": [
+      "tryearmark"
+    ],
+    "hex": "FFFFFF",
+    "categories": [
+      "AI",
+      "Productivity",
+      "Software",
+      "SaaS"
+    ],
+    "variants": {
+      "default": "/icons/earmark/default.svg",
+      "light": "/icons/earmark/light.svg",
+      "dark": "/icons/earmark/dark.svg"
+    },
+    "license": "brand-use",
+    "url": "https://tryearmark.com",
+    "dateAdded": "2026-10-13",
+    "collection": "brands"
+  },
+  {
     "slug": "easyeda",
     "title": "EasyEDA",
     "aliases": [
