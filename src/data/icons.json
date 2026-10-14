@@ -93172,6 +93172,28 @@
     "collection": "brands"
   },
   {
+    "slug": "monitixx",
+    "title": "monitixx",
+    "aliases": [
+      "票探"
+    ],
+    "hex": "0B0F19",
+    "categories": [
+      "Entertainment",
+      "Software"
+    ],
+    "variants": {
+      "default": "/icons/monitixx/default.svg",
+      "mono": "/icons/monitixx/mono.svg",
+      "wordmark": "/icons/monitixx/wordmark.svg",
+      "wordmarkLight": "/icons/monitixx/wordmarkLight.svg"
+    },
+    "license": "brand-use",
+    "url": "https://www.monitixx.com/",
+    "collection": "brands",
+    "dateAdded": "2026-10-14"
+  },
+  {
     "slug": "monkey-tie",
     "title": "monkey tie",
     "aliases": [],
